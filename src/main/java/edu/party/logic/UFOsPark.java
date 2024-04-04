@@ -14,11 +14,16 @@ public class UFOsPark {
     void add (String UFO){
         flota.put(UFO, "Libre");
     }
+
     public void dispatch(CreditCard creditCard){
-        if (creditCard.credit() >= fee && !flota.isEmpty() && flota.containsValue("Libre")){
-            creditCard.pay(fee);
-            flota.replace( UFO, "Libre", creditCard.cardOwner());
+        for (Map.Entry<String, String> ufo : this.flota.entrySet()) {
+            if (creditCard.credit() >= fee && ufo.getValue().equals("Libre")){
+                creditCard.pay(fee);
+                flota.replace( ufo.getKey(), "Libre", creditCard.cardOwner());
+                break;
+            }
         }
     }
-
 }
+
+
