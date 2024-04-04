@@ -41,7 +41,9 @@ public class UfosPark {
     public boolean containsCard (String cardNumber){
         return this.flota.containsValue(cardNumber);
     }
-
+    public Collection<String> cardNumbers(){
+        return this.flota.values();
+    }
 
 }
 
