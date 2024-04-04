@@ -1,9 +1,11 @@
 package edu.party.logic;
 
+import edu.party.payment.CreditCard;
+
 public class CrystalExpender implements GuestDispatcher{
     private int stock = 0;
     private double ItemCost = 0.0;
-    CrystalExpender (int stock, double ItemCost){
+    public CrystalExpender (int stock, double ItemCost){
         this.stock = stock;
         this.ItemCost = ItemCost;
     }
@@ -15,7 +17,7 @@ public class CrystalExpender implements GuestDispatcher{
         }
     }
 
-    int stock (){
+    public int stock (){
         return this.stock;
     }
 

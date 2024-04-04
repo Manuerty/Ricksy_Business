@@ -1,34 +1,36 @@
-package edu.party.logic;
+package edu.party.payment;
 
-public class CreditCard {
+public class CreditCard implements PaymentMethod {
     final String owner;
     final String number;
     private double credit;
 
     final String SYMBOL = "EZI";
 
-    CreditCard(String owner, String number) {
+    public CreditCard(String owner, String number) {
         this.owner = owner;
         this.number = number;
     }
 
-    boolean pay (double amount){
+    @Override
+    public boolean pay (double amount){
         if (amount > credit){
             return false;
         }
         credit -= amount;
         return true;
     }
-
-    String number(){
+    @Override
+    public String number(){
         return this.number;
     }
 
-    String cardOwner(){
+    @Override
+    public String cardOwner(){
         return this.owner;
     }
-
-    double credit(){
+    @Override
+    public double credit(){
         return this.credit;
     }
 

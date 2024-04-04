@@ -26,7 +26,7 @@
 
 package edu.party;
 
-import edu.party.logic.CreditCard;
+import edu.party.payment.CreditCard;
 import edu.party.logic.CrystalExpender;
 import edu.party.logic.RickMenuDispatcher;
 import edu.party.logic.Receptivo;

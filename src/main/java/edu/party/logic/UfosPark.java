@@ -1,17 +1,20 @@
 package edu.party.logic;
 
+import edu.party.payment.CreditCard;
+
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UFOsPark {
+public class UfosPark {
     private double fee;
     final Map<String, String> flota = new HashMap<>();
 
-    UFOsPark(){
+    public UfosPark(){
         ;
     }
 
-    void add (String UFO){
+    public void add (String UFO){
         flota.put(UFO, "Libre");
     }
 
@@ -19,11 +22,12 @@ public class UFOsPark {
         for (Map.Entry<String, String> ufo : this.flota.entrySet()) {
             if (creditCard.credit() >= fee && ufo.getValue().equals("Libre")){
                 creditCard.pay(fee);
-                flota.replace( ufo.getKey(), "Libre", creditCard.cardOwner());
+                flota.replace( ufo.getKey(), "Libre", creditCard.number());
                 break;
             }
         }
     }
+
 }
 
 

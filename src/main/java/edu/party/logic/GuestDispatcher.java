@@ -1,6 +1,6 @@
 package edu.party.logic;
 
-import edu.party.logic.CreditCard;
+import edu.party.payment.CreditCard;
 
 public interface GuestDispatcher {
 
