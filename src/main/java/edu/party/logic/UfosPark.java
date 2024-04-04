@@ -38,6 +38,11 @@ public class UfosPark {
         }
         return ufoID;
     }
+    public boolean containsCard (String cardNumber){
+        return this.flota.containsValue(cardNumber);
+    }
+
+
 }
 
 
