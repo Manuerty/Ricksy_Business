@@ -27,7 +27,17 @@ public class UfosPark {
             }
         }
     }
-
+    public String getUfoOf(String cardNumber) {
+        String ufoID = "";
+        if(this.flota.containsValue(cardNumber)){
+            for (Map.Entry<String, String> ufo : this.flota.entrySet()) {
+                if (ufo.getValue().equals(cardNumber)) {
+                    ufoID = ufo.getKey();
+                }
+            }
+        }
+        return ufoID;
+    }
 }
 
 
