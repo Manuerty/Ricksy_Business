@@ -44,7 +44,10 @@ public class UfosPark {
     public Collection<String> cardNumbers(){
         return this.flota.values();
     }
-
+    @Override
+    public String toString(){
+        return "Fee: " + fee + "\nFlota: " + flota;
+    }
 }
 
 
